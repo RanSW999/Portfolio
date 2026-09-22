@@ -14,8 +14,13 @@ body{
     gap: 30px;
 }
 
+.first{
+    margin-top: 50px;
+}
+
 main {
     min-width: 0;
+    position: relative;
 }
 
 section {
@@ -69,19 +74,24 @@ section {
     border-bottom: rgba(166, 166, 166, 0.155) solid 1px;
     padding-bottom: 25px;
     margin-bottom: 30px;
+    display: flex;
+    align-items: center;
 }
 
 .pfp{
-    width: 110px;
-    height: 110px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     margin-left: 20px;
     box-shadow: 2px 0px 22px 5px #6b6b6b31;
+    flex-shrink: 0;
 
 }
 .sign{
-    width: 150px;
     height: 80px;
+    flex: 1;
+    min-width: 0;
+    max-width: 300px;
 }
 
 .scrollBar{
@@ -117,4 +127,51 @@ section {
 
 .imgOverlay.active .expandedImg{
     transform: scale(1);
+}
+.menu{
+    position: sticky;
+    top: 20px;
+    width: fit-content;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding: 12px 16px;
+    background: rgba(26, 25, 25, 0.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    z-index: 100;
+
+}
+
+.menu a{
+    text-decoration: none;
+    border-radius: 10px;
+    box-shadow: 3px 3px 6px 0px rgba(64, 64, 64, 0.296);
+    transition: all 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menu i{
+    color: rgb(255, 255, 255);
+    transition: all 0.2s ease;
+    padding: 16px 26px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menu a:hover{
+    background: white;
+}
+.menu i:hover{
+    color: black;
+}
+
+.logo{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
 }
