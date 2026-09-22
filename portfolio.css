@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    background: #111;
+}
+
+.main{
+    font-family: sans-serif;
+    display: grid;
+    grid-template-columns: minmax(290px, 30vw) minmax(0, 1fr);
+    gap: 30px;
+}
+
+main {
+    min-width: 0;
+}
+
+section {
+    height: 500px;
+    padding: 40px;
+    margin-bottom: 100px;
+    border: 1px solid #ddd;
+    color: wheat;
+}
+
+
+.sideBar{
+    height: 100vh;
+    box-sizing: border-box;
+    min-width: 290px;
+    position: sticky;
+    top: 0;
+    background-color: #1a1919;
+    padding-top: 20px;
+    overflow-x: hidden;
+    box-shadow: 3px 3px 22px 0px #6b6b6b31;
+    margin-right: 30px;
+}
+
+.toc{
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    width: 150px;
+    height: fit-content;
+    padding-left: 60px;
+}
+.toc span{
+    font-size: 25px;
+    width: max-content;
+}
+.toc a {
+    color: #999;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.toc a.active {
+    color: #fcfcfca4;
+    font-weight: 600;
+    font-size: 18px;
+    transform: translateX(4px);
+}
+
+.pfpsign{
+    border-bottom: rgba(166, 166, 166, 0.155) solid 1px;
+    padding-bottom: 25px;
+    margin-bottom: 30px;
+}
+
+.pfp{
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    margin-left: 20px;
+    box-shadow: 2px 0px 22px 5px #6b6b6b31;
+
+}
+.sign{
+    width: 150px;
+    height: 80px;
+}
+
+.scrollBar{
+    color: #ffffffc1;
+}
+.imgOverlay{
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(5, 5, 5, 0.589);
+    backdrop-filter: blur(8px);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+}
+
+.imgOverlay.active{
+    opacity: 1;
+    visibility: visible;
+}
+
+.expandedImg{
+    max-width: 80vw;
+    max-height: 80vh;
+    border-radius: 50%;
+    object-fit: contain;
+    transform: scale(0.8);
+    transition: transform 0.3s ease;
+}
+
+.imgOverlay.active .expandedImg{
+    transform: scale(1);
+}
