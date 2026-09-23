@@ -14,8 +14,61 @@ body{
     gap: 30px;
 }
 
-.first{
+.intro{
     margin-top: 50px;
+    font-size: 40px;
+    color: wheat;
+    background: #1a19194f;
+    border-radius: 25px;
+    padding-top: 0;
+    perspective: 1500px;
+}
+.intro-page {
+    position: relative;
+    width: 100%;
+    display: grid;
+    transform-style: preserve-3d;
+    transition: transform 1s cubic-bezier(.2, .75, .2, 1);
+}
+.intro-page.flipped {
+    transform: rotateY(180deg);
+}
+.intro-side {
+    grid-area: 1 / 1;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+.intro-front {
+    transform: rotateY(0deg);
+}
+.intro-back {
+    transform: rotateY(180deg);
+}
+.translate{
+    position:relative;
+    text-align: right;
+    top: 3px;
+    display: block;
+    margin-bottom: 20px;
+    z-index: 20;
+}
+.translate button{
+    padding: 15px;
+    border-radius: 40%;
+    border: none;
+    font-size: 17px;
+    background: #111;
+    color: #999;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.translate button:hover{
+    background: rgba(245, 222, 179, 0.641);
+    color: #111;
+}
+
+.fa-fire{
+    font-size: 30px;
 }
 
 main {
@@ -24,11 +77,12 @@ main {
 }
 
 section {
-    height: 500px;
+    text-align: center;
+    height: auto;
     padding: 40px;
     margin-bottom: 100px;
-    border: 1px solid #ddd;
-    color: wheat;
+    color: rgba(246, 246, 246, 0.886);
+    margin-right: 20px;
 }
 
 
@@ -85,6 +139,7 @@ section {
     margin-left: 20px;
     box-shadow: 2px 0px 22px 5px #6b6b6b31;
     flex-shrink: 0;
+    cursor: pointer;
 
 }
 .sign{
@@ -174,4 +229,58 @@ section {
     text-decoration: none;
     font-weight: bold;
     font-size: 20px;
+}
+
+section img{
+    width: 100%;
+    border-radius: 50px;
+}
+.project-card{
+    position: relative;
+    display: block;
+    width: fit-content;
+    overflow: hidden;
+    text-decoration: none;
+    border-radius: 50px;
+
+}
+.project-card .clock{
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: all 0.5s ease;
+}
+.image-overlay{
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    padding: 30px;
+    text-align: center;
+    background: rgba(25, 25, 25, 0.852);
+    color: white;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+.image-overlay h3{
+    margin: 0 0 10px;
+    font-size: 2rem;
+}
+
+.image-overlay p{
+    margin: 0;
+    max-width: 400px;
+    font-size: 1rem;
+    line-height: 1.6;
+    opacity: 0.85;
+}
+
+.project-card:hover .image-overlay{
+    opacity: 1;
+}
+.project-card:hover .clock{
+    transform: scale(1.05);
 }

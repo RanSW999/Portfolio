@@ -34,3 +34,17 @@ images.forEach(img => {
 overlay.addEventListener("click", () => {
     overlay.classList.remove("active");
 });
+
+const introPage = document.getElementById("introPage");
+const enBtn = document.getElementById("enBtn");
+const faBtn = document.getElementById("faBtn");
+
+
+enBtn.addEventListener("click", () => {
+    introPage.classList.remove("flipped");
+});
+
+
+faBtn.addEventListener("click", () => {
+    introPage.classList.add("flipped");
+});
