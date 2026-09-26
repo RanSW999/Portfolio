@@ -23,17 +23,17 @@ body{
     padding-top: 0;
     perspective: 1500px;
 }
-.intro-page {
+.intro-page{
     position: relative;
     width: 100%;
     display: grid;
     transform-style: preserve-3d;
     transition: transform 1s cubic-bezier(.2, .75, .2, 1);
 }
-.intro-page.flipped {
+.intro-page.flipped{
     transform: rotateY(180deg);
 }
-.intro-side {
+.intro-side{
     grid-area: 1 / 1;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
@@ -41,7 +41,7 @@ body{
 .intro-front {
     transform: rotateY(0deg);
 }
-.intro-back {
+.intro-back{
     transform: rotateY(180deg);
 }
 .translate{
@@ -53,6 +53,7 @@ body{
     z-index: 20;
 }
 .translate button{
+    box-shadow: 5px 5px 15px 0px rgba(67, 67, 67, 0.253);
     padding: 15px;
     border-radius: 40%;
     border: none;
