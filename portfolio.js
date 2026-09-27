@@ -36,15 +36,22 @@ overlay.addEventListener("click", () => {
 });
 
 const introPage = document.getElementById("introPage");
+
 const enBtn = document.getElementById("enBtn");
 const faBtn = document.getElementById("faBtn");
-
+const arBtn = document.getElementById("arBtn");
 
 enBtn.addEventListener("click", () => {
-    introPage.classList.remove("flipped");
+    introPage.classList.remove("flipped-fa", "flipped-ar");
+    introPage.classList.add("flipped-en");
 });
 
-
 faBtn.addEventListener("click", () => {
-    introPage.classList.add("flipped");
+    introPage.classList.remove("flipped-en", "flipped-ar");
+    introPage.classList.add("flipped-fa");
+});
+
+arBtn.addEventListener("click", () => {
+    introPage.classList.remove("flipped-en", "flipped-fa");
+    introPage.classList.add("flipped-ar");
 });

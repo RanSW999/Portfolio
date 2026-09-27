@@ -22,6 +22,7 @@ body{
     border-radius: 25px;
     padding-top: 0;
     perspective: 1500px;
+    overflow: hidden;
 }
 .intro-page{
     position: relative;
@@ -30,20 +31,34 @@ body{
     transform-style: preserve-3d;
     transition: transform 1s cubic-bezier(.2, .75, .2, 1);
 }
-.intro-page.flipped{
-    transform: rotateY(180deg);
+
+.intro-page.flipped-en{
+    transform: rotateY(0deg);
+}
+.intro-page.flipped-fa{
+    transform: rotateY(-120deg);
+}
+.intro-page.flipped-ar{
+    transform: rotateY(-240deg);
 }
 .intro-side{
     grid-area: 1 / 1;
+    width: 100%;
+    min-height: 100%;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
 }
-.intro-front {
-    transform: rotateY(0deg);
+
+.intro-front{
+    transform: rotateY(0deg) translateZ(1px);
 }
 .intro-back{
-    transform: rotateY(180deg);
+    transform: rotateY(120deg) translateZ(1px);
 }
+.intro-ar{
+    transform: rotateY(240deg) translateZ(1px);
+}
+
 .translate{
     position:relative;
     text-align: right;
@@ -72,12 +87,12 @@ body{
     font-size: 30px;
 }
 
-main {
+main{
     min-width: 0;
     position: relative;
 }
 
-section {
+section{
     text-align: center;
     height: auto;
     padding: 40px;
@@ -112,13 +127,13 @@ section {
     font-size: 25px;
     width: max-content;
 }
-.toc a {
+.toc a{
     color: #999;
     text-decoration: none;
     transition: all 0.2s ease;
 }
 
-.toc a.active {
+.toc a.active{
     color: #fcfcfca4;
     font-weight: 600;
     font-size: 18px;
