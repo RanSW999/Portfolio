@@ -1,0 +1,95 @@
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    background: #111;
+}
+.cont{
+    font-family: sans-serif;
+    display: grid;
+    grid-template-columns: minmax(290px, 30vw) minmax(0, 1fr);
+    gap: 0px;
+    align-items: center;
+    justify-content: center;
+}
+.pfp{
+  width: auto;
+  height: 200px;
+  display: block;
+}
+
+.me{
+  color: wheat;
+  background: #201f1f;
+  border-radius: 20px;
+  padding: 30px;
+  margin: 20px;
+  border: solid 1px grey;
+  height: 100vh;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: max-content;
+  position: sticky;
+}
+.par{
+  color: antiquewhite;
+  text-align: center;
+  border-radius: 20px;
+  border: 1px solid grey;
+  padding: 20px;
+  margin: 20px;
+  background: #201f1f;
+}
+.moto{
+  font-size: 30px;
+}
+.skills{
+  color: antiquewhite;
+  text-align: left;
+  border-radius: 20px;
+  border: 1px solid grey;
+  padding: 20px;
+  margin: 20px;
+  background: #201f1f;
+  display: grid;
+  grid-template-rows: auto;
+  gap: 10px;
+}
+.skills span{
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  width: 100%;
+  background: rgb(55, 46, 72);
+  border-radius: 20px;
+}
+.hobbies{
+  color: antiquewhite;
+  text-align: left;
+  border-radius: 20px;
+  border: 1px solid grey;
+  padding: 20px;
+  margin: 20px;
+  background: #201f1f;
+  display: grid;
+  grid-template-rows: auto;
+}
+.books span{
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  width: 100%;
+  background: rgb(55, 46, 72);
+  border-radius: 20px;
+}
+.gaming span{
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  width: 100%;
+  background: rgb(55, 46, 72);
+  border-radius: 20px;
+}
