@@ -83,7 +83,7 @@ body{
     line-height: 1.8;
 
 }
-.skills, .hobbies{
+.skills, .hobbies, .sayHi{
     color: antiquewhite;
     text-align: left;
     border-radius: 20px;
@@ -114,29 +114,26 @@ body{
     padding: 20px;
     border-radius: 25px 15px 15px 15px;
     font-size: 30px;
+    left: 0;
 }
 .skill1{
     background: rgb(230, 76, 102);
-    left: 2%;
 }
 .skill2{
     background: rgb(167, 116, 255);
-    left: 10%;
 }
 .skill3{
     background: rgb(255, 191, 0);
-    left: 18%;
 }
 .skill4{
     background: rgb(0, 172, 206);
-    left: 36%;
-
 }
 .skill5{
     background: rgb(0, 171, 20);
-    left:47%;
 }
-
+.skill6{
+    background: rgb(86, 185, 77);
+}
 .skills span::before{
     content: '';
     background: inherit;
@@ -193,8 +190,7 @@ body{
         width: 100%;
         padding: 15px;
     }
-    .skills,
-    .hobbies{
+    .skills,.hobbies{
         width: 100%;
         padding: 15px;
     }
