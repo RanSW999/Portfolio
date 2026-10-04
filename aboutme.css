@@ -5,6 +5,7 @@
 body{
     margin: 0;
     background: #111;
+    font-family: sans-serif;
 }
 .menu{
     position: sticky;
@@ -56,7 +57,7 @@ body{
 
 .cont{
     width: fit-content;
-    max-width: 1200px;
+    max-width: 1300px;
     margin: 20px auto;
     display: grid;
     grid-template-columns: 600px 600px;
@@ -70,13 +71,18 @@ body{
     border-radius: 20px;
     padding: 30px;
     border: 1px solid grey;
-    height: fit-content;
-    position: sticky;
     top: 20px;
     transition: transform 0.15s ease-out;
     transform-style: preserve-3d;
+    margin-bottom: 20px;
 }
+.left{
+    color: wheat;
+    padding: 30px;
+    height: fit-content;
+    top: 20px;
 
+}
 .pfp{
     width: 525px;
     height: auto;
@@ -154,7 +160,6 @@ body{
 .skills span{
     width: fit-content;
     position: relative;
-    display: block;
     margin: 10px;
     padding: 20px;
     border-radius: 25px 15px 15px 15px;
@@ -239,4 +244,17 @@ body{
         width: 100%;
         padding: 15px;
     }
+}
+.sayHi .logo{
+    display: block;
+    width: 100%;
+    background: #171717e2;
+    border: solid 1px grey;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 15px;
+    margin: 7px;
+    text-align: center;
+    cursor: alias;
+    color: #f9f9f9cf;
 }
