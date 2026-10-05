@@ -5,7 +5,8 @@
 body{
     margin: 0;
     background: #111;
-    font-family: sans-serif;
+    color:#f2e8d8 ;
+    font-family: system-ui
 }
 .menu{
     position: sticky;
@@ -56,127 +57,210 @@ body{
 }
 
 .cont{
-    width: fit-content;
-    max-width: 1300px;
-    margin: 20px auto;
+    max-width: 1200px;
+    margin: 32px auto 64px;
+    padding: 0 24px;
     display: grid;
-    grid-template-columns: 600px 600px;
-    gap: 20px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
     align-items: start;
 }
 
-.me{
-    color: wheat;
-    background: #201f1f;
-    border-radius: 20px;
-    padding: 30px;
-    border: 1px solid grey;
-    top: 20px;
+.me {
     transition: transform 0.15s ease-out;
     transform-style: preserve-3d;
-    margin-bottom: 20px;
 }
-.left{
-    color: wheat;
-    padding: 30px;
-    height: fit-content;
-    top: 20px;
 
-}
-.pfp{
-    width: 525px;
-    height: auto;
+.pfp {
     display: block;
-    border-radius: 30px;
-    margin: 0 auto 20px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 16px;
+}
+
+.card{
+    background: #1c1b1b;
+    border-radius: 20px;
+    padding: 28px;
+    border: 1px solid  rgba(255, 255, 255, 0.1);
+}
+
+.card h2{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    font-size: 1.25rem;
+    color: wheat;
 }
 
 .moto{
     line-height: 1.8;
     color: white;
-    font-family: monospace;
+    font-family: ui-monospace;
     font-size: 40px;
+    font-weight: bold;
     border-radius: 30px;
-    overflow: hidden;
-    width: fit-content;
-    white-space: pre;
-    padding: 20px;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    white-space: pre-wrap;
+    min-height: 3.4em;
     font-weight: bold;
     
+}
+.moto::after {
+    content: "";
+    display: inline-block;
+    width: 0.5em;
+    height: 1em;
+    margin-left: 3px;
+    vertical-align: text-bottom;
+    background: #fff;
+    animation: blink 0.8s step-end infinite;
 }
 .moto.typing{
     animation:
     typing 2s steps(var(--characters)),
     blink 0.5s step-end infinite alternate;
 }
-@keyframes typing{
-    from{
-      width: 0;
-    }to{
-      width: 100%;
+
+@keyframes blink {
+    50% {
+        opacity: 0;
     }
 }
+
+
 .info{
-    width: 100%;
+    display: grid;
+    gap: 24px;
+    min-width: 0;
+}
+.left{
+    position: sticky;
 }
 .par{
     color: antiquewhite;
     text-align: center;
     border-radius: 20px;
-    border: 1px solid grey;
     padding: 20px;
     margin-bottom: 20px;
-    background: #201f1f;
     font-size: 23px;
     white-space: wrap;
     line-height: 1.8;
 
 }
-.skills, .hobbies, .sayHi{
-    color: antiquewhite;
-    text-align: left;
-    border-radius: 20px;
-    border: 1px solid grey;
-    padding: 20px;
-    margin-bottom: 20px;
-    background: #201f1f;
+.timeline {
+    position: relative;
+    list-style: none;
+    padding-left: 28px;
 }
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 8px;
+    top: 8px;
+    bottom: 8px;
+    width: 2px;
+    background: wheat;
+}
+
+.timeline li {
+    position: relative;
+    padding-bottom: 28px;
+}
+
+.timeline li:last-child {
+    padding-bottom: 0;
+}
+
+.timeline li::before {
+    content: "";
+    position: absolute;
+    left: -28px;
+    top: 6px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #1c1b1b;
+    border: 2px solid wheat;
+}
+
+
+.timeline .date {
+    display: inline-block;
+    margin-bottom: 6px;
+    padding: 2px 10px;
+    border-radius: 20px;
+    background: rgba(245, 222, 179, 0.12);
+    color: wheat;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+}
+
+.timeline h3 {
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+.timeline .place {
+    margin-bottom: 4px;
+    color: wheat;
+    font-size: 0.95rem;
+}
+
+.timeline li p:last-child {
+    color: #b3a894;
+    font-size: 0.95rem;
+}
+
 
 .skills{
     display: grid;
-    gap: 10px;
-    padding: 25px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
 
 }
-.books span, .gaming span{
-    display: block;
-    padding: 20px;
-    width: fit-content;
-    background: rgb(55, 46, 72);
-    border-radius: 20px;
+.skill {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    background: rgba(255, 255, 255, 0.04);
+
+    border-radius: 14px;
+    font-weight: 600;
+    transition: transform 0.2s ease, background 0.2s ease;
 }
-.skills span{
-    width: fit-content;
-    position: relative;
-    margin: 10px;
-    padding: 20px;
-    border-radius: 25px 15px 15px 15px;
-    font-size: 30px;
-    left: 0;
+
+.skill:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.07);
+}
+
+.skill i {
+    flex-shrink: 0;
+    width: 1.6rem;
+    font-size: 1.4rem;
+    text-align: center;
+}
+.skill small {
+    display: block;
+    font-weight: 400;
+    font-size: 0.8rem;
 }
 .skill1{
-    background: rgb(230, 76, 102);
+    background: rgb(223, 45, 75);
 }
 .skill2{
-    background: rgb(167, 116, 255);
+    background: rgb(148, 86, 255);
 }
 .skill3{
     background: rgb(255, 191, 0);
 }
 .skill4{
-    background: rgb(0, 172, 206);
+    background: rgb(2, 185, 221);
 }
 .skill5{
     background: rgb(0, 171, 20);
@@ -184,66 +268,11 @@ body{
 .skill6{
     background: rgb(86, 185, 77);
 }
-.skills span::before{
-    content: '';
-    background: inherit;
-    border-radius: 5px;
-    position: absolute;
-    top: -13px;
-    left: -13px;
-    width: 22px;
-    height: 22px;
-    border-radius:10% 50% 50% 50%;
-
+.skill7{
+    background: rgb(227, 124, 21);
 }
-
-
-.hobbies{
-    display: grid;
-    gap: 20px;
-}
-
-.gaming,.books{
-    display: grid;
-    gap: 10px;
-}
-
-@media (max-width: 768px){
-    .cont{
-        width: 100%;
-        max-width: 100%;
-        margin: 0;
-        padding: 10px;        
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-    .me{
-        width: 100%;
-        padding: 20px;        
-        position: static;
-    }
-    .pfp{
-        width: 90%;
-        max-width: 100%;
-        height: auto;
-    }
-    .info{
-        width: 100%;
-    }
-    .par{
-        font-size: 18px;
-        padding: 15px;
-    }
-    .moto{
-        font-size: 25px;
-        white-space: normal;
-        width: 100%;
-        padding: 15px;
-    }
-    .skills,.hobbies{
-        width: 100%;
-        padding: 15px;
-    }
+.skill8{
+    background: rgb(135, 135, 225);
 }
 .sayHi .logo{
     display: block;
@@ -257,4 +286,49 @@ body{
     text-align: center;
     cursor: alias;
     color: #f9f9f9cf;
+}
+.sayHi{
+    display: grid;
+    gap: 1px;
+}
+.sayHi a {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 12px;
+    text-decoration: none;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.sayHi a:hover,
+.sayHi a:focus-visible {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(3px);
+}
+
+
+@media (max-width: 860px) {
+    .cont {
+        grid-template-columns: 1fr;
+        margin-top: 24px;
+        padding: 0 16px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 380px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+    }
 }
