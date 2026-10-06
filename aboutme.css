@@ -137,18 +137,89 @@ body{
 }
 .left{
     position: sticky;
+    top: 60px;
+    display: grid;
+    gap: 24px;
+    min-width: 0;
 }
-.par{
+.intro p{
     color: antiquewhite;
     text-align: center;
     border-radius: 20px;
     padding: 20px;
     margin-bottom: 20px;
     font-size: 23px;
-    white-space: wrap;
+    white-space: normal;
     line-height: 1.8;
 
 }
+.intro{
+    padding-top: 0;
+    perspective: 1500px;
+    overflow: hidden;
+}
+.intro-page{
+    position: relative;
+    width: 100%;
+    display: grid;
+    transform-style: preserve-3d;
+    transition: transform 1s cubic-bezier(.2, .75, .2, 1);
+    transform: rotateY(0deg);
+}
+
+.intro-page.flipped-en{
+    transform: rotateY(0deg);
+}
+
+.intro-page.flipped-fa{
+    transform: rotateY(-120deg);
+}
+
+.intro-page.flipped-ar{
+    transform: rotateY(-240deg);
+}
+.intro-side{
+    grid-area: 1 / 1;
+    width: 100%;
+    min-height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.intro-front{
+    transform: rotateY(0deg) translateZ(1px);
+}
+.intro-back{
+    transform: rotateY(120deg) translateZ(1px);
+}
+.intro-ar{
+    transform: rotateY(240deg) translateZ(1px);
+}
+
+.translate{
+    position:relative;
+    text-align: right;
+    top: 3px;
+    display: block;
+    margin-bottom: 20px;
+    z-index: 20;
+}
+.translate button{
+    box-shadow: 5px 5px 15px 0px rgba(67, 67, 67, 0.105);
+    padding: 15px;
+    border-radius: 40%;
+    border: none;
+    font-size: 17px;
+    background: #111;
+    color: #999;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.translate button:hover{
+    background: rgba(245, 222, 179, 0.808);
+    color: #111;
+}
+
 .timeline {
     position: relative;
     list-style: none;
@@ -269,10 +340,13 @@ body{
     background: rgb(86, 185, 77);
 }
 .skill7{
-    background: rgb(227, 124, 21);
+    background: rgb(246, 37, 235);
 }
 .skill8{
     background: rgb(135, 135, 225);
+}
+.skill9{
+    background: rgb(226, 126, 4);
 }
 .sayHi .logo{
     display: block;

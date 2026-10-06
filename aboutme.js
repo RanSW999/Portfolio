@@ -1,5 +1,6 @@
 const me = document.querySelector(".me");
 const canHover = window.matchMedia("(hover: hover)").matches;
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 if (me&&canHover && !reduceMotion) {
     me.addEventListener("mousemove", (e) => {
@@ -31,7 +32,6 @@ me.addEventListener("mouseleave", () =>{
 const motto = document.querySelector(".moto");
 const firstMotto = "Jack of all trades,\nMaster of none,";
 const secondMotto = "Often better\nthan master of one.";
-const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 let typingTimer = null;
     function typeText(text) {
     clearInterval(typingTimer);
@@ -56,12 +56,33 @@ if (motto) {
     typeText(firstMotto);
 
     window.addEventListener("scroll", () => {
-        if (window.scrollY > 100 && !showingSecond) {
+        if (window.scrollY > 450 && !showingSecond) {
             showingSecond = true;
             typeText(secondMotto);
-        } else if (window.scrollY < 30 && showingSecond) {
+        } else if (window.scrollY < 80 && showingSecond) {
             showingSecond = false;
             typeText(firstMotto);
         }
     });
 }
+
+const introPage = document.getElementById("introPage");
+
+const enBtn = document.getElementById("enBtn");
+const faBtn = document.getElementById("faBtn");
+const arBtn = document.getElementById("arBtn");
+
+enBtn.addEventListener("click", () => {
+    introPage.classList.remove("flipped-fa", "flipped-ar");
+    introPage.classList.add("flipped-en");
+});
+
+faBtn.addEventListener("click", () => {
+    introPage.classList.remove("flipped-en", "flipped-ar");
+    introPage.classList.add("flipped-fa");
+});
+
+arBtn.addEventListener("click", () => {
+    introPage.classList.remove("flipped-en", "flipped-fa");
+    introPage.classList.add("flipped-ar");
+});

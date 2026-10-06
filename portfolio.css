@@ -314,19 +314,11 @@ section img{
 .project-card:hover .clock{
     transform: scale(1.05);
 }
-/* =========================================
-   MOBILE RESPONSIVE
-   Desktop layout remains unchanged
-   ========================================= */
 
 @media (max-width: 768px) {
-
-    /* Main layout becomes one column */
     .main {
         display: block;
     }
-
-    /* Turn the desktop sidebar into a mobile header */
     .sideBar {
         position: relative;
         width: 100%;
@@ -336,8 +328,6 @@ section img{
         padding: 10px;
         overflow: visible;
     }
-
-    /* Profile section */
     .pfpsign {
         justify-content: center;
         margin-bottom: 15px;
@@ -355,18 +345,15 @@ section img{
         max-width: 200px;
     }
 
-    /* Hide the desktop table of contents */
     .scrollBar {
         display: none;
     }
 
-    /* Main content */
     main {
         width: 100%;
         min-width: 0;
     }
 
-    /* Top navigation */
     .menu {
         position: sticky;
         top: 10px;
@@ -380,7 +367,6 @@ section img{
         padding: 12px 15px;
     }
 
-    /* Sections */
     section {
         width: 100%;
         padding: 20px;
@@ -388,7 +374,6 @@ section img{
         margin-bottom: 50px;
     }
 
-    /* Intro section */
     .intro {
         margin-top: 20px;
         font-size: 25px;
@@ -416,8 +401,6 @@ section img{
         padding: 10px;
         font-size: 14px;
     }
-
-    /* Project images */
     section img {
         width: 100%;
         height: auto;
@@ -443,7 +426,6 @@ section img{
         line-height: 1.4;
     }
 
-    /* Expanded image */
     .expandedImg {
         max-width: 90vw;
         max-height: 80vh;
