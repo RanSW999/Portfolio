@@ -382,27 +382,134 @@ body{
 }
 
 
-@media (max-width: 860px) {
+@media (max-width: 600px) {
+
+    .menu {
+        top: 10px;
+        width: calc(100% - 24px);
+        gap: 4px;
+        padding: 6px 8px;
+        margin-top: 10px;
+        justify-content: space-around;
+    }
+
+    .menu a {
+        flex: 1;
+        min-width: 0;
+        min-height: 44px;
+        box-shadow: none;
+    }
+
+    .menu i {
+        padding: 12px 10px;
+        font-size: 16px;
+    }
+
     .cont {
-        grid-template-columns: 1fr;
-        margin-top: 24px;
-        padding: 0 16px;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 16px;
+        margin: 18px auto 36px;
+        padding: 0 12px;
     }
 
-    .card {
-        padding: 20px;
+    .left {
+        position: static;
+        gap: 16px;
     }
-}
 
-@media (max-width: 380px) {
-    .skills-grid {
-        grid-template-columns: 1fr;
+    .info {
+        gap: 16px;
     }
-}
 
-@media (prefers-reduced-motion: reduce) {
-    * {
-        transition: none !important;
-        animation: none !important;
+\    .card {
+        min-width: 0;
+        padding: 16px;
+        border-radius: 16px;
+    }
+
+    .pfp {
+        margin-bottom: 14px;
+        border-radius: 12px;
+    }
+    .moto {
+        font-size: clamp(26px, 7vw, 38px);
+        line-height: 1.4;
+        min-height: 2.7em;
+        overflow-wrap: anywhere;
+    }
+
+    .intro {
+        min-width: 0;
+    }
+
+    .intro p {
+        padding: 12px 4px;
+        margin-bottom: 8px;
+        font-size: clamp(16px, 4vw, 18px);
+        line-height: 1.7;
+        overflow-wrap: anywhere;
+    }
+
+    .translate {
+        margin-bottom: 12px;
+    }
+
+    .translate button {
+        min-width: 44px;
+        min-height: 44px;
+        padding: 10px 12px;
+        border-radius: 14px;
+        font-size: 15px;
+    }
+
+    .skills {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+    }
+
+    .skill {
+        min-width: 0;
+        gap: 8px;
+        padding: 12px 10px;
+        overflow-wrap: anywhere;
+    }
+
+    .skill i {
+        width: 1.25rem;
+        font-size: 1.15rem;
+    }
+
+    .skill small {
+        font-size: 0.72rem;
+        line-height: 1.4;
+    }
+
+    .timeline {
+        padding-left: 24px;
+    }
+
+    .timeline li::before {
+        left: -24px;
+    }
+
+    .timeline h3,
+    .timeline li p {
+        overflow-wrap: anywhere;
+    }
+    .sayHi {
+        gap: 8px;
+    }
+
+    .sayHi a {
+        min-width: 0;
+        gap: 10px;
+        padding: 12px;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+    .sayHi a span {
+        min-width: 0;
+        overflow-wrap: anywhere;
     }
 }
