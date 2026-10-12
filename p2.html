@@ -9,24 +9,12 @@
 <body>
     
     <div class="card" id="card">
-        <h2>Hello</h2>
-        <p>Move your mouse around me.</p>
-        </div>
+
+    </div>
 
         <script>
 
-            const card = document.querySelector(".card");
 
-            card.onmousemove = e => {
-            const x = e.offsetX / card.offsetWidth - 1;
-            const y = e.offsetY / card.offsetHeight - 1;
-
-            card.style.transform = `rotateX(${-y * 10}deg) rotateY(${x * 10}deg)`;
-            };
-
-            card.onmouseleave = () => {
-            card.style.transform = "rotateX(0) rotateY(0)";
-            };
         </script>
 </body>
 </html>

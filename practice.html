@@ -8,52 +8,95 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="cont">
-        <div class="me">
-            <img class="pfp" src="Black-cat.gif" alt="">
-            <p class="moto">Jack of all trades,
-        Master of none,</p>
-        </div>
-        <div class="info">
-            <p class="par">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Vero aliquid, nostrum perspiciatis cum aspernatur, voluptates natus
-                ad sapiente assumenda sint incidunt quo id in repudiandae, quia Lorem
-                 ipsum dolor sit amet consectetur adipisicing elit. Vero aliquid, nost
-                 rum perspiciatis cum aspernatur, voluptates natus ad sapiente assum
-                 enda sint incidunt quo id in repudiandae, quia impedit amet odit quas?
-                impedit amet odit quas?</p>
-            <div class="skills">
-                <span class="skill1">HTML <i class="fa-brands fa-html5"></i></span>
-                <span class="skill2">CSS <i class="fa-brands fa-css"></i></span>
-                <span class="skill3">JavaScript <i class="fa-brands fa-js"></i></span>
-                <span class="skill4">React <i class="fa-brands fa-react"></i></span>
-                <span class="skill5">Node.JS <i class="fa-brands fa-node-js"></i></span>
-                <span class="skill6">Trilingual (English, Arabic, Persian) <i class="fa-solid fa-language"></i></span>
-            </div>
-            <div class="hobbies">
-                <div class="gaming">
-                    <span>minecraft</span>
-                    <span>minecraft</span>
-                    <span>minecraft</span>
-                    <span>minecraft</span>
-                </div>
-                <div class="books">
-                    <span>The Witcher</span>
-                    <span>The Witcher</span>
-                    <span>The Witcher</span>
-                </div>
-            </div>
-            <div class="education"></div>
-            <div class="sayHi">
-                <a href="#gmail" class="logo gmail"><i class="fa-solid fa-envelope"></i></a>
-                <a href="#linkdin" class="logo linkdin"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="https://github.com/RanSW999" class="logo linkdin"><i class="fa-brands fa-github"></i></a>
-                <a href="https://github.com/RanSW999" class="logo cv"><i class="fa-solid fa-folder-open"></i></a>
-            </div>
-        </div>
-    </div>
-    <script src="practice.js">
-        
+    <canvas id="gameCanvas" width="500" height="500"></canvas>
+    <script>
+        const FPS = 30;
+        const shipSize = 30
+        const speed = 360
+        const shipThrust = 5
+
+        var canvas = document.getElementById('gameCanvas');
+        var ctx = canvas.getContext('2d');      
+        var ship = {
+            x: canvas.width/2,
+            y: canvas.height/2,
+            r: shipSize/2,
+            a: 90/180 * Math.PI,
+            rot: 0,
+            thrusting: false,
+            thrust: {
+                x: 0,
+                y: 0
+            }
+        }
+        document.addEventListener("keydown", keyDown);
+        document.addEventListener("keyup", keyUp);
+
+
+        setInterval(update,1000/FPS);
+
+        function keyDown(/** @type {keyboardevent} */ ev){
+            switch(ev.keyCode){
+                case 37:
+                    ship.rot = speed / 180 * Math.PI /FPS;
+                    break;
+                case 38:
+                    ship.thrusting = true;
+                    break;
+                case 39:
+                    ship.rot = -speed / 180 * Math.PI /FPS;
+
+                    break;
+            }
+        }
+
+        function keyUp(/** @type {keyboardevent} */ ev){
+            switch(ev.keyCode){
+                case 37:
+                    ship.rot = 0;
+                    break;
+                case 38:
+                    ship.thrusting = false;
+                    break;
+                case 39:
+                    ship.rot = 0;
+
+                    break;
+            }
+        }
+        function update(){
+            ctx.fillStyle = 'black';
+            ctx.fillRect(0,0,canvas.width,canvas.height);
+
+            if (ship.thrusting){
+                ship.thrust.x += shipThrust + Math.cos(ship.a)
+                ship.thrust.x += shipThrust + Math.sin(ship.a)
+            }
+
+            ctx.strokeStyle = "white";
+            ctx.lineWidth = shipSize/20;
+
+            ctx.beginPath();
+            ctx.moveTo(
+                ship.x + 4/3 * ship.r * Math.cos(ship.a),
+                ship.y - 4/3 * ship.r * Math.sin(ship.a)
+            )
+            ctx.lineTo(
+                ship.x - ship.r * (2/3 * Math.cos(ship.a) + Math.sin(ship.a)),
+                ship.y + ship.r * (2/3 * Math.sin(ship.a) - Math.cos(ship.a))
+            )
+            ctx.lineTo(
+                ship.x - ship.r * (2/3 * Math.cos(ship.a) - Math.sin(ship.a)),
+                ship.y + ship.r * (2/3 * Math.sin(ship.a) + Math.cos(ship.a))
+            )
+            ctx.closePath();
+            ctx.stroke();
+
+            ship.a += ship.rot;
+
+            ctx.fillStyle = "red";
+            ctx.fillRect(ship.x, ship.y, 2,2) 
+        }
     </script>
 </body>
 </html>
