@@ -56,10 +56,10 @@ if (motto) {
     typeText(firstMotto);
 
     window.addEventListener("scroll", () => {
-        if (window.scrollY > 450 && !showingSecond) {
+        if (window.scrollY > 350 && !showingSecond) {
             showingSecond = true;
             typeText(secondMotto);
-        } else if (window.scrollY < 80 && showingSecond) {
+        } else if (window.scrollY < 50 && showingSecond) {
             showingSecond = false;
             typeText(firstMotto);
         }
